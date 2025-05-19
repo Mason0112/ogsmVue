@@ -4,11 +4,11 @@ import TestView from "../views/TestView.vue";
 
 const routes = [
   {
-    path: "/gantt/:id",
+    path: "/gant/:dashboardCode",
     component: TestView,
     props: (route) => ({
-      id: route.params.id,
-      type: route.query.type,
+      dashboardCode: route.params.dashboardCode,
+      versionCode: route.query.versionCode,
     }),
   },
 ];
