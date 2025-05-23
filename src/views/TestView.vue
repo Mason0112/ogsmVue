@@ -33,14 +33,14 @@ const chartEnd = ref("");
 onMounted(async () => {
   try {
     const res = await axiosapi.get(
-      `/gant/get/${props.dashboardCode}/${props.versionCode}`
+      `/gantt/get/${props.dashboardCode}/${props.versionCode}`
     );
     const ganttData = res.data;
     console.log("🚀 Gantt Data:", ganttData);
 
     // 自動設定 row 資料（每一筆一 row）
     rows.value = ganttData.map((item) => ({
-      label: item.labelName,
+      label: item.ganttBarConfig.label,
       bars: [item],
     }));
 
